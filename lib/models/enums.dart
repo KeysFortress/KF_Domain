@@ -6,6 +6,8 @@ enum ActiveDashboardView { addTag, scanTag, listTags }
 
 enum ActiveNavigationPage {
   passwords,
+  totp,
+  secrets,
   syncMode,
   identities,
 }
