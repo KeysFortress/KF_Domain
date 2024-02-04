@@ -12,4 +12,6 @@ enum ActiveNavigationPage {
   identities,
 }
 
+enum DeviceTypes { mobile, desktop, tablet }
+
 enum SecretType { password, custom }
