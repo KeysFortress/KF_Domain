@@ -6,7 +6,15 @@ class Device extends DeviceConnectionStatus {
   String key;
   String ip;
   String port;
+  SyncTypes syncType;
   DeviceTypes deviceType;
 
-  Device(this.name, this.key, this.ip, this.port, this.deviceType);
+  Device(
+    this.name,
+    this.key,
+    this.ip,
+    this.port,
+    this.deviceType,
+    this.syncType,
+  );
 }

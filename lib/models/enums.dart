@@ -12,6 +12,8 @@ enum ActiveNavigationPage {
   identities,
 }
 
+enum SyncTypes { full, partial, otc }
+
 enum DeviceTypes { mobile, desktop, tablet }
 
 enum SecretType { password, custom }
