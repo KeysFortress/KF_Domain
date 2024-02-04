@@ -1,6 +1,7 @@
+import 'package:domain/models/device_connection_status.dart';
 import 'package:domain/models/enums.dart';
 
-class Device {
+class Device extends DeviceConnectionStatus {
   String name;
   String key;
   String ip;
