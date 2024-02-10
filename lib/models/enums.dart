@@ -18,4 +18,4 @@ enum DeviceTypes { mobile, desktop, tablet }
 
 enum SecretType { password, custom }
 
-enum DeviceLockType { password, biometric, totp, none }
+enum DeviceLockType { password, pattern, biometric, totp, none }
