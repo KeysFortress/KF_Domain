@@ -6,6 +6,7 @@ class Device extends DeviceConnectionStatus {
   String key;
   String ip;
   String port;
+  String mac;
   SyncTypes syncType;
   DeviceTypes deviceType;
 
@@ -14,6 +15,7 @@ class Device extends DeviceConnectionStatus {
     this.key,
     this.ip,
     this.port,
+    this.mac,
     this.deviceType,
     this.syncType,
   );
@@ -25,6 +27,7 @@ class Device extends DeviceConnectionStatus {
       json['key'] as String,
       json['ip'] as String,
       json['port'] as String,
+      json['mac'] as String,
       DeviceTypes.values.byName(json['deviceType']),
       SyncTypes.values.byName(json['syncType']),
     );
