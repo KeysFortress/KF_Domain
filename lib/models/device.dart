@@ -32,4 +32,17 @@ class Device extends DeviceConnectionStatus {
       SyncTypes.values.byName(json['syncType']),
     );
   }
+
+  // Method to convert Device object to a JSON map
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'key': key,
+      'ip': ip,
+      'port': port,
+      'mac': mac,
+      'deviceType': deviceType.toString().split('.').last,
+      'syncType': syncType.toString().split('.').last,
+    };
+  }
 }
