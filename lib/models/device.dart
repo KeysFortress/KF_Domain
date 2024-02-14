@@ -6,6 +6,7 @@ class Device extends DeviceConnectionStatus {
   String key;
   String ip;
   String port;
+  String mac;
   SyncTypes syncType;
   DeviceTypes deviceType;
 
@@ -14,7 +15,34 @@ class Device extends DeviceConnectionStatus {
     this.key,
     this.ip,
     this.port,
+    this.mac,
     this.deviceType,
     this.syncType,
   );
+
+  // Named constructor to create a Device object from a JSON map
+  factory Device.fromJson(Map<String, dynamic> json) {
+    return Device(
+      json['name'] as String,
+      json['key'] as String,
+      json['ip'] as String,
+      json['port'] as String,
+      json['mac'] as String,
+      DeviceTypes.values.byName(json['deviceType']),
+      SyncTypes.values.byName(json['syncType']),
+    );
+  }
+
+  // Method to convert Device object to a JSON map
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'key': key,
+      'ip': ip,
+      'port': port,
+      'mac': mac,
+      'deviceType': deviceType.toString().split('.').last,
+      'syncType': syncType.toString().split('.').last,
+    };
+  }
 }

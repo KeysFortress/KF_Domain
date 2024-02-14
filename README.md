@@ -1,39 +1,25 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# KF_Domain
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+`KF_Domain` plays a pivotal role in the KeysFortress architecture, serving as the heart of the application. This submodule, injected as a part of both KeysFortress Mobile and KeysFortress Desktop repositories, encapsulates the core business logic and domain entities, adhering to clean architecture principles.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Purpose
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+The primary purpose of `KF_Domain` is to define and manage the core business logic and entities within KeysFortress. By embodying the principles of clean architecture, this submodule ensures that the application's core remains independent of external concerns, facilitating easier maintenance, testing, and evolution.
 
-## Features
+## Key Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+### 1. Clean Architecture Independence
 
-## Getting started
+`KF_Domain` is designed to be completely independent of external frameworks, libraries, or specific implementation details. This independence ensures that the core business logic remains unaffected by changes in the presentation or infrastructure layers.
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### 2. Business Entities
 
-## Usage
+Within `KF_Domain`, essential business entities are defined. These entities represent the core data and functionalities of the application, forming the basis for interactions across different layers.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### 3. Use Cases and Business Logic
 
-```dart
-const like = 'sample';
-```
+The submodule houses use cases and core business logic, encapsulating the application's unique functionalities. These components define how the application responds to various user interactions and events.
 
-## Additional information
+## Contributing
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Contributions to enhance and extend the core business logic and entities are encouraged. If you identify opportunities for improvement, new features, or optimizations, consider submitting a pull request to strengthen the core of KeysFortress.
