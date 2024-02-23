@@ -8,6 +8,7 @@ class AppConfig {
   final int port;
   final bool isLocal;
   final String localDatabasePath;
+  final String jtwSecret;
 
   AppConfig({
     required this.apiEndpoint,
@@ -16,6 +17,7 @@ class AppConfig {
     required this.port,
     required this.isLocal,
     required this.localDatabasePath,
+    required this.jtwSecret,
   });
 
   static AppConfig getNew() => AppConfig(
@@ -25,6 +27,7 @@ class AppConfig {
         port: 12345,
         schema: "",
         localDatabasePath: "",
+        jtwSecret: "",
       );
 
   factory AppConfig.fromJson(Map<String, dynamic> jsonMap) {
@@ -35,6 +38,7 @@ class AppConfig {
       port: jsonMap['port'],
       isLocal: jsonMap['isLocal'],
       localDatabasePath: jsonMap['localDatabasePath'],
+      jtwSecret: jsonMap['jtwSecret'] ?? "",
     );
   }
 
