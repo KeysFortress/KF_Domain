@@ -1,14 +1,16 @@
 class OtpCode {
+  String id;
   String code;
   String issuer;
   String address;
   String secret;
 
-  OtpCode(this.code, this.address, this.issuer, this.secret);
+  OtpCode(this.id, this.code, this.address, this.issuer, this.secret);
 
   // Convert a JSON object to a SignatureEvent instance
   factory OtpCode.fromJson(Map<String, dynamic> json) {
     return OtpCode(
+      json['id'],
       "",
       json['address'] as String? ?? "",
       json['secret'] as String,
@@ -35,12 +37,14 @@ class OtpCode {
 
     String secret = uri.queryParameters['secret'] ?? '';
 
-    return OtpCode("", user, issuer, secret);
+    return OtpCode("", "", user, issuer, secret);
   }
 
   // Convert a SignatureEvent instance to a JSON object
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
+      'issuer': issuer,
       'address': address,
       'secret': secret,
     };

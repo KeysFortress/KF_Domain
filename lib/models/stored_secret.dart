@@ -1,6 +1,7 @@
 import 'package:domain/models/enums.dart';
 
 class StoredSecret {
+  String id;
   String name;
   String content;
   String username;
@@ -8,6 +9,7 @@ class StoredSecret {
   SecretType secretType;
 
   StoredSecret({
+    required this.id,
     required this.name,
     required this.username,
     required this.content,
@@ -17,6 +19,7 @@ class StoredSecret {
 
   factory StoredSecret.fromJson(Map<String, dynamic> element) {
     return StoredSecret(
+      id: element["id"],
       name: element["name"],
       username: element["username"],
       content: element["content"],
@@ -28,6 +31,7 @@ class StoredSecret {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'username': username,
       'content': content,
