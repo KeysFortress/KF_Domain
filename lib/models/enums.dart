@@ -12,6 +12,8 @@ enum ActiveNavigationPage {
   identities,
 }
 
+enum PasswordWarningBoxType { general, onGenerate, onTransfer }
+
 enum SyncTypes { full, partial, otc }
 
 enum DeviceTypes { mobile, desktop, tablet }
