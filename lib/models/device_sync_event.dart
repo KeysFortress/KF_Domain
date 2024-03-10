@@ -5,8 +5,9 @@ class DeviceSyncEvent {
   String ip;
   DateTime dateTime;
   List<ExchangedData> exchanged;
+  int type;
 
-  DeviceSyncEvent(this.id, this.ip, this.dateTime, this.exchanged);
+  DeviceSyncEvent(this.id, this.ip, this.dateTime, this.exchanged, this.type);
 
   Map<String, dynamic> toJson() {
     return {
@@ -14,6 +15,7 @@ class DeviceSyncEvent {
       'ip': ip,
       'dateTime': dateTime.toIso8601String(),
       'exchanged': exchanged.map((data) => data.toJson()).toList(),
+      'type': type
     };
   }
 
@@ -25,6 +27,7 @@ class DeviceSyncEvent {
       (json['exchanged'] as List<dynamic>)
           .map((data) => ExchangedData.fromJson(data))
           .toList(),
+      json['type'] as int,
     );
   }
 }
