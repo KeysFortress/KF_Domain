@@ -2,7 +2,7 @@ class SignatureEvent {
   String publicKey;
   String signature;
   String message;
-  String data;
+  String? data;
   String? url;
 
   SignatureEvent(
@@ -19,7 +19,7 @@ class SignatureEvent {
       json['publicKey'] as String,
       json['signature'] as String,
       json['message'] as String,
-      json['data'] as String,
+      json['data'] as String?,
       json['url'] as String?,
     );
   }
