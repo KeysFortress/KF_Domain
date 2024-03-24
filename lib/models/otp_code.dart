@@ -4,8 +4,10 @@ class OtpCode {
   String issuer;
   String address;
   String secret;
+  int? interval;
 
-  OtpCode(this.id, this.code, this.address, this.issuer, this.secret);
+  OtpCode(this.id, this.code, this.address, this.issuer, this.secret,
+      this.interval);
 
   // Convert a JSON object to a SignatureEvent instance
   factory OtpCode.fromJson(Map<String, dynamic> json) {
@@ -15,6 +17,7 @@ class OtpCode {
       json['address'] as String? ?? "",
       json['secret'] as String,
       json['issuer'] as String? ?? "",
+      json['interval'] as int? ?? 30,
     );
   }
 
@@ -34,10 +37,16 @@ class OtpCode {
     if (issuer.isEmpty) {
       issuer = uri.queryParameters['issuer'] ?? '';
     }
+    var interval = 30;
+    var intervalData = uri.queryParameters['interval'];
+
+    if (intervalData != null) {
+      interval = int.parse(intervalData);
+    }
 
     String secret = uri.queryParameters['secret'] ?? '';
 
-    return OtpCode("", "", user, issuer, secret);
+    return OtpCode("", "", user, issuer, secret, interval);
   }
 
   // Convert a SignatureEvent instance to a JSON object
@@ -47,6 +56,7 @@ class OtpCode {
       'issuer': issuer,
       'address': address,
       'secret': secret,
+      'interval': "",
     };
   }
 
