@@ -17,7 +17,11 @@ class OtpCode {
       json['address'] as String? ?? "",
       json['secret'] as String,
       json['issuer'] as String? ?? "",
-      json['interval'] as int? ?? 30,
+      json['interval'] == null || json['interval'] == ""
+          ? 30
+          : int.parse(
+              json['interval'],
+            ),
     );
   }
 
