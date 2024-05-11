@@ -3,29 +3,33 @@ class QrCodeData {
   String finishChallenge;
   String forUser;
   String? bearer;
+  String challenge;
 
   QrCodeData(
     this.initial,
     this.finishChallenge,
     this.forUser,
     this.bearer,
+    this.challenge,
   );
 
   factory QrCodeData.fromJson(Map<String, dynamic> json) {
     return QrCodeData(
-      json['Initial'] as String,
-      json['FinishChallenge'] as String,
-      json['ForUser'] as String,
-      json['bearer'] as String?,
+      json['Domain'] as String,
+      json['VerifySignature'] as String,
+      json['Uuid'] as String,
+      json['Bearer'] as String?,
+      json['Code'] as String,
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'Initial': initial,
-      'FinishChallenge': finishChallenge,
-      'ForUser': forUser,
+      'Domain': initial,
+      'VerifySignature': finishChallenge,
+      'Uuid': forUser,
       'bearer': bearer,
+      'code': challenge,
     };
   }
 }
