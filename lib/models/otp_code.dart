@@ -28,8 +28,8 @@ class OtpCode {
       json['id'],
       "",
       json['address'] as String? ?? "",
-      json['secret'] as String,
       json['issuer'] as String? ?? "",
+      json['secret'] as String,
       json['interval'] == null || json['interval'] == ""
           ? 30
           : json['interval'],
